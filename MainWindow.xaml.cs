@@ -28,9 +28,9 @@ namespace Tema2_CaracteresLimitados
 
         private void TextoUsuario_TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (TextoUsuario_TextBox.Text.Length <= MAX_CARACTERES)
-                ContadorPalabras_TextBlock.Text = TextoUsuario_TextBox.Text.Length.ToString() + "/140";
-            else TextoUsuario_TextBox.IsReadOnly = true;
+            ContadorPalabras_TextBlock.Text = TextoUsuario_TextBox.Text.Length.ToString() + "/140";
+            if (TextoUsuario_TextBox.Text.Length >= MAX_CARACTERES)
+                TextoUsuario_TextBox.IsReadOnly = true;
         }
     }
 }
